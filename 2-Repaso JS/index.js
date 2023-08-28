@@ -34,7 +34,9 @@ let cadena2 = new String("hola");
 //clase propia creada por nosotros
 class Animal {
   constructor(especie, nombre, tamanio) {
-    (this.especie = especie), (this.nombre = nombre), (this.tamanio = tamanio);
+    this.especie = especie;
+    this.nombre = nombre;
+    this.tamanio = tamanio;
   }
 
   get info() {
@@ -43,16 +45,32 @@ class Animal {
 
   set modificarTamanio(nuevoTamanio) {
     this.tamanio = nuevoTamanio;
-
   }
 }
 
 let perro = new Animal("canino", "perro");
 let gato = new Animal("felino", "kitty", "mediano");
 
-perro.modificarTamanio="grande"
+perro.modificarTamanio = "grande";
 
 console.log(perro.info);
+
+// herencia
+
+class Mamiferos extends Animal{
+  constructor(especie, nombre,  tamanio, habitat, tipoDeRespiracion) {
+    super(especie, nombre, tamanio);
+    this.habitat = habitat;
+    this.tipoDeRespiracion = tipoDeRespiracion;
+  }
+
+  get infoMamifero() {
+    return `El animal es un: ${this.especie}, y se llama ${this.nombre}, tamaño: ${this.tamanio}. Es un mamifero de habitat: ${this.habitat}, y el tipo de respiracion es: ${this.tipoDeRespiracion}.`;
+  }
+}
+
+let mamifero = new Mamiferos("gato", "tiger", "tamanio","terrestre", "pulmonar")
+console.log(mamifero.infoMamifero);
 
 // for forEach
 
