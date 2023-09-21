@@ -1,7 +1,5 @@
 
 function Usuario() {
-
-
   return (
     <div>
         <div className="card" style="width: 18rem;">

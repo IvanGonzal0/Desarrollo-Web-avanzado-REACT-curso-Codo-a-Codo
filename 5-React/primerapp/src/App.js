@@ -5,8 +5,7 @@ import Usuario from './components/Usuario'
 function App() {
   return (
     <div className="App">
-      <Usuario/>
-      {/* <header className="App-header">
+      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hola MUNDO REACT.
@@ -19,7 +18,7 @@ function App() {
         >
           Learn React
         </a>
-      </header> */}
+      </header>
     </div>
   );
 }
