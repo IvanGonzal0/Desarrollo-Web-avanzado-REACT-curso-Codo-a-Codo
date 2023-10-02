@@ -23,10 +23,14 @@ const Api = () => {
 
       <ul>
         {users.map(user => (
-          <li>
-            <img src={user.avatar} alt="" />
-            <p>{user.first_name}, {user.last_name}</p>
-          </li>
+            <div className="card m-2 mx-auto" style={{width: "18rem"}}>
+                <img src={user.avatar} className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">{user.first_name}, {user.last_name}</h5>
+                    <p className="card-text">{user.email}</p>
+                    <a href="#" className="btn btn-info">Conctact</a>
+                </div>
+            </div>
         ))}
       </ul>
     </div>
