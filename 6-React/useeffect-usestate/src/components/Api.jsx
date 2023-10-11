@@ -19,7 +19,7 @@ const Api = () => {
   //RENDER
   return (
     <div>
-      <h2>Ejemplo de Api</h2>
+      <h1>Ejemplo de API</h1>
 
       <ul>
         {users.map(user => (
