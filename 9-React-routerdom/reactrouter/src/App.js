@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/contactos" element={<Contactos />} />
         <Route path="/nosotros" element={<Nosotros />} />
-
+        <Route path="*" exact={true} element={<h1>Not Found, no encontrado</h1>} />
       </Routes>
     </div>
   );
