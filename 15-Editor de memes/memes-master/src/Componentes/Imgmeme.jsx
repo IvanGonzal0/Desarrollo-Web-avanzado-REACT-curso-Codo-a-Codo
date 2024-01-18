@@ -1,10 +1,23 @@
-import React, {useState} from 'react';
+import React, {useEffect,useState} from 'react';
 import html2canvas from 'html2canvas';
+import Skeleton from 'react-loading-skeleton'
 
 const Imgmeme = () => {
 
     const [textomeme, setTextomeme] = useState();
     const [imgMeme, setImgMeme] = useState();
+
+    const [loading, setLoading] = useState(false);
+    const [title, setTitle] = useState("");
+
+    useEffect(() => {
+      
+      setTimeout(() => {
+        setLoading(false);
+        setTitle("IVAN GONZALO")
+      }, 3000);
+    })
+
 
     const textmeme = (e) =>{
         setTextomeme(e.target.value);
@@ -29,7 +42,7 @@ const Imgmeme = () => {
 
   return (
     <div>
-        <h1 className='mt-5 mb-3 text-light '>Editá tu propio meme</h1>
+        <h1 className='mt-5 mb-3 text-light '>{title || <Skeleton/>}</h1>
 
         <h2 className='mt-2 mb-3'>Escribí tu frase</h2>
         <input onChange={textmeme} className="form-control w-25 m-auto d-block" type="text" placeholder="Pone tu frase" name="meme"/>
@@ -45,7 +58,7 @@ const Imgmeme = () => {
         
         <figure className='text-center' id='exportar'>
           <p className='mt-5 w-100 px-30 position-absolute top-50 start-30 h1 text-center'>{textomeme}</p>  
-          <img src={`../memesImg/${imgMeme}.png`} className='figure-img mt-3 d-block m-auto' alt='meme'/>
+          {/* <img src={`../memesImg/${imgMeme}.png`} className='figure-img mt-3 d-block m-auto' alt='meme'/> */}
         </figure>
 
         <button onClick={descarga} type='button' className='btn btn-primary mt-5 mb-4'>Descargar meme</button>
