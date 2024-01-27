@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Message from "./Message";
 // SimpleForm
 export default function SimpleForm() {
   const [formState, setFormState] = useState({
@@ -16,17 +17,25 @@ export default function SimpleForm() {
     });
   };
 
-  useEffect(() => {
-    console.log("useEffect called!");
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("mousemove");
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log("formState changed!");
+  // }, [formState]);
+
+  // useEffect(() => {
+  //   console.log("email changed!");
+  // }, [email]);
 
   useEffect(() => {
-    console.log("formState changed!");
-  }, [formState]);
+    first 
 
-  useEffect(() => {
-    console.log('email changed!');
-},[email]);
+    return () => {
+      second
+    }
+  })
 
   return (
     <>
@@ -48,6 +57,11 @@ export default function SimpleForm() {
         value={email}
         onChange={onInputChange}
       />
+
+      {
+        (username === 'strider2') && <Message/>
+      }
+      <Message/>
     </>
   );
 }
