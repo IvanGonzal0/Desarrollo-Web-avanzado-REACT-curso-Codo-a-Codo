@@ -17,17 +17,17 @@ export default function SimpleForm() {
     });
   };
 
-  // useEffect(() => {
-  //   window.addEventListener("mousemove");
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("mousemove");
+  }, []);
 
-  // useEffect(() => {
-  //   console.log("formState changed!");
-  // }, [formState]);
+  useEffect(() => {
+    console.log("formState changed!");
+  }, [formState]);
 
-  // useEffect(() => {
-  //   console.log("email changed!");
-  // }, [email]);
+  useEffect(() => {
+    console.log("email changed!");
+  }, [email]);
 
   useEffect(() => {
     first 
